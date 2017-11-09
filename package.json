@@ -1,0 +1,23 @@
+{
+  "name": "dashboard-react-components",
+  "version": "1.0.0",
+  "description": "Components for geo dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tahoang/dashboard-components.git"
+  },
+  "keywords": [
+    "dashboard",
+    "react-component"
+  ],
+  "author": "Tu Hoang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tahoang/dashboard-components/issues"
+  },
+  "homepage": "https://github.com/tahoang/dashboard-components#readme"
+}
