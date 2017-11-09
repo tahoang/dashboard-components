@@ -7,3 +7,6 @@ Dashboard components
 --Chart (base chart component)
 */
 
+export * from './component';
+
+
