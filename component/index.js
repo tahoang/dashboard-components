@@ -8,5 +8,6 @@ export {
 	LayerControl,
 	StatusDisplay,
 	MapComponent,
-	MapLegend
+	MapLegend,
+	Chart
 };
