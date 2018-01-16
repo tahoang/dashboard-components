@@ -50,6 +50,28 @@ export default class Chart extends React.Component {
 	}
 
 	componentWillReceiveProps(newProps, newState) {
+		this.updateChart(newProps, newState);
+	}
+
+	shouldComponentUpdate(newProps, newState) {
+		//never update using react render. Chart data will be
+		//rendered using nvd3 instance
+		return true;
+	}
+
+	componentDidMount() {
+		
+		//initialize nvd3 chart object
+		if(typeof this.chartInit == 'function')
+			nv.addGraph(this.chartInit);
+
+		//define call back in subclass to set state when new data comes in
+		//var controller = this.props.controller;
+
+	}
+
+
+	updateChart(newProps, newState) {
 		//update the chart here
 		var data = newProps.data;
 		//set y label
@@ -71,24 +93,6 @@ export default class Chart extends React.Component {
 
     nv.utils.windowResize(this.chart.update);
 	}
-
-	shouldComponentUpdate(newProps, newState) {
-		//never update using react render. Chart data will be
-		//rendered using nvd3 instance
-		return true;
-	}
-
-	componentDidMount() {
-		
-		//initialize nvd3 chart object
-		if(typeof this.chartInit == 'function')
-			nv.addGraph(this.chartInit);
-
-		//define call back in subclass to set state when new data comes in
-		//var controller = this.props.controller;
-
-	}
-
 	// update(data) {
 	// 	this.setState({data: data});
 	// }
