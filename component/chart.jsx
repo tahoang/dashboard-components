@@ -31,8 +31,8 @@ export default class Chart extends React.Component {
 
 	render() {
 		let title = '';
-		if(this.title	!= '')
-			title = this.title + this.props.name;
+		if(this.props.title)
+			title = this.props.title + this.props.name;
 		else
 			title = this.props.name;
 
