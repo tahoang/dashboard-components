@@ -24,7 +24,7 @@ export default class Map extends React.Component {
 	}
 	render() {
 		return (
-			<div id="map" ref={ (el) => this._el = el }></div>
+			<div className="leaflet-map" ref={ (el) => this._el = el }></div>
 		);
 	}
 }
