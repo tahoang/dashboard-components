@@ -13,7 +13,7 @@ export default class StatusDisplay extends React.Component{
 		// this.state = {
 		// 	status: 'Map initialized'
 		// };
-		this.style = {
+		this.style = Object.assign({
 			position: 'absolute',
 			top: 1,
 			right: 1,
@@ -28,8 +28,7 @@ export default class StatusDisplay extends React.Component{
 			padding: '2px 5px',
 			opacity: .8,
 			color: '#fff'
-			
-		}
+		}, this.props.statusStyle);
 	}
 	// componentDidMount() {
 	// 	var mapComponent = this.props.mapComponent;
