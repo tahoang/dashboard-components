@@ -9,7 +9,9 @@ export default class Legend extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.style = {
+
+		let {legendStyle} = this.props;
+		this.style = Object.assign({
 			position: 'absolute',
 			bottom: '20px',
 			right: 1,
@@ -21,7 +23,7 @@ export default class Legend extends React.Component {
     	fontWeight: 'bold',
     	border: '1px solid',
     	opacity: 0.8
-		};
+		}, legendStyle);
 	}
 
 	render() {
