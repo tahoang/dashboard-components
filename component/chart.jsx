@@ -35,11 +35,15 @@ export default class Chart extends React.Component {
 			title = this.props.title + this.props.name;
 		else
 			title = this.props.name;
+		
+		const {notation} = this.props;
 
 		return (
 			<div>
 				<h3>
-					{title} <br/>
+					{title} 
+					<small>&nbsp;{notation}</small>
+					<br/>
 					<small>{this.props.subtitle}</small>
 				</h3>
 
