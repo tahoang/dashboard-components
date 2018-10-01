@@ -2,9 +2,11 @@
   "name": "dashboard-react-components",
   "version": "1.1.7",
   "description": "Components for geo dashboard",
-  "main": "index.js",
+  "main": "dist/dashboardComponent.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "webpack --env.production=0 --progress --profile --colors --w",
+    "build:prod": "webpack --env.production --progress --profile --colors"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,26 @@
   "bugs": {
     "url": "https://github.com/tahoang/dashboard-components/issues"
   },
-  "homepage": "https://github.com/tahoang/dashboard-components#readme"
+  "homepage": "https://github.com/tahoang/dashboard-components#readme",
+  "dependencies": {
+    "d3": "^4.13.0",
+    "nvd3": "^1.8.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.5.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env"
+    ]
+  }
 }
