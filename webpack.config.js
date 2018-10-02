@@ -23,10 +23,16 @@ module.exports = (env, argv) => {
 			dashboardComponent: ['babel-polyfill', './index.js'],
 		},
 		output: {
+			libraryTarget: 'umd',
+			library: 'dashboard-component',
 			filename: '[name].js',
 			chunkFilename: '[name].chunk.js',
 			path: path.resolve(__dirname, 'dist'),
 			publicPath: 'dist/'
+		},
+		externals: {
+			'd3': 'd3',
+			'nvd3': 'nvd3'
 		},
 		optimization: {
 	    splitChunks: {

@@ -2,7 +2,7 @@
   "name": "dashboard-react-components",
   "version": "1.1.9",
   "description": "Components for geo dashboard",
-  "main": "index.js",
+  "main": "dist/dashboardComponents.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "webpack --env.production=0 --progress --profile --colors --w",
