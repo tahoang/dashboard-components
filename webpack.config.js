@@ -20,12 +20,12 @@ module.exports = (env, argv) => {
 		mode,
 		context: path.resolve(__dirname, 'component'),
 		entry: {
-			dashboardComponent: ['babel-polyfill', './index.js'],
+			dashboardComponents: ['babel-polyfill', './index.js'],
 		},
 		output: {
 			libraryTarget: 'umd',
-			library: 'dashboard-component',
-			filename: '[name].js',
+			library: 'dashboard-components',
+			// filename: '[name].js',
 			chunkFilename: '[name].chunk.js',
 			path: path.resolve(__dirname, 'dist'),
 			publicPath: 'dist/'
