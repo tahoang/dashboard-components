@@ -38,17 +38,17 @@ module.exports = (env, argv) => {
 		optimization: {
 	    splitChunks: {
 	      cacheGroups: {
-	        // commons: {
-	        //   test: /[\\/]node_modules[\\/]/,
-	        //   name: 'vendors',
-	        //   chunks: 'all'
-	        //   // priority: -10
-	        // },
-	        // default: {
-	        //   minChunks: 2,
-	        //   priority: -20,
-	        //   reuseExistingChunk: true
-	        // }
+	        commons: {
+	          test: /[\\/]node_modules[\\/]/,
+	          name: 'vendors',
+	          chunks: 'all'
+	          // priority: -10
+	        },
+	        default: {
+	          minChunks: 2,
+	          priority: -20,
+	          reuseExistingChunk: true
+	        }
 	      }
 	    }
 	  },
