@@ -32,7 +32,8 @@ module.exports = (env, argv) => {
 		},
 		externals: {
 			'd3': 'd3',
-			'nvd3': 'nvd3'
+			'nvd3': 'nvd3',
+			'React': 'react'
 		},
 		optimization: {
 	    splitChunks: {

@@ -24,7 +24,8 @@
   "homepage": "https://github.com/tahoang/dashboard-components#readme",
   "peerDependencies": {
     "d3": "^4.13.0",
-    "nvd3": "^1.8.6"
+    "nvd3": "^1.8.6",
+    "react": "^16.3.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
