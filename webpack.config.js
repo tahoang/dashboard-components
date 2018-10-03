@@ -20,7 +20,7 @@ module.exports = (env, argv) => {
 		mode,
 		// context: path.resolve(__dirname, 'component'),
 		entry: {
-			index: ['babel-polyfill', './index.js'],
+			index: ['./index.js'],
 		},
 		output: {
 			libraryTarget: 'umd',
