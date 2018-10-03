@@ -23,10 +23,10 @@ module.exports = (env, argv) => {
 			dashboardComponents: ['babel-polyfill', './index.js'],
 		},
 		output: {
-			libraryTarget: 'commonjs2',
-			// library: 'dashboard-components',
+			libraryTarget: 'umd',
+			library: 'dashboard-react-components',
 			// filename: '[name].js',
-			chunkFilename: '[name].chunk.js',
+			// chunkFilename: '[name].chunk.js',
 			path: path.resolve(__dirname, 'dist'),
 			publicPath: 'dist/'
 		},

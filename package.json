@@ -22,7 +22,7 @@
     "url": "https://github.com/tahoang/dashboard-components/issues"
   },
   "homepage": "https://github.com/tahoang/dashboard-components#readme",
-  "dependencies": {
+  "peerDependencies": {
     "d3": "^4.13.0",
     "nvd3": "^1.8.6"
   },
