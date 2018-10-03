@@ -18,7 +18,7 @@ module.exports = (env, argv) => {
 
 	const common  = {
 		mode,
-		context: path.resolve(__dirname, 'component'),
+		context: path.resolve(__dirname, './'),
 		entry: {
 			dashboardComponents: ['babel-polyfill', './index.js'],
 		},
