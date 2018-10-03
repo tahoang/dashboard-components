@@ -18,9 +18,9 @@ module.exports = (env, argv) => {
 
 	const common  = {
 		mode,
-		context: path.resolve(__dirname, './'),
+		// context: path.resolve(__dirname, 'component'),
 		entry: {
-			dashboardComponents: ['babel-polyfill', './index.js'],
+			index: ['babel-polyfill', './index.js'],
 		},
 		output: {
 			libraryTarget: 'umd',
@@ -37,17 +37,17 @@ module.exports = (env, argv) => {
 		optimization: {
 	    splitChunks: {
 	      cacheGroups: {
-	        commons: {
-	          test: /[\\/]node_modules[\\/]/,
-	          name: 'vendors',
-	          chunks: 'all'
-	          // priority: -10
-	        },
-	        default: {
-	          minChunks: 2,
-	          priority: -20,
-	          reuseExistingChunk: true
-	        }
+	        // commons: {
+	        //   test: /[\\/]node_modules[\\/]/,
+	        //   name: 'vendors',
+	        //   chunks: 'all'
+	        //   // priority: -10
+	        // },
+	        // default: {
+	        //   minChunks: 2,
+	        //   priority: -20,
+	        //   reuseExistingChunk: true
+	        // }
 	      }
 	    }
 	  },
