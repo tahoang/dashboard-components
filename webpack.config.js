@@ -3,6 +3,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 // const merge = require('webpack-merge');
 // const CleanWebpackPlugin = require('clean-webpack-plugin');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -18,40 +19,36 @@ module.exports = (env, argv) => {
 
 	const common  = {
 		mode,
-		context: path.resolve(__dirname, 'component'),
+		// context: path.resolve(__dirname, 'component'),
 		entry: {
-			dashboardComponents: ['./index.js'],
+			index: path.resolve(__dirname, 'src/index.js')
 		},
 		output: {
-			libraryTarget: 'umd',
-			library: 'dashboard-react-components',
-			// filename: '[name].js',
+			libraryTarget: 'commonjs',
+			library: '',
+			filename: '[name].js',
 			// chunkFilename: '[name].chunk.js',
-			path: path.resolve(__dirname, 'component')
+			path: path.resolve(__dirname, './dist')
 			// publicPath: 'dist/'
 		},
-		externals: {
-			'd3': 'd3',
-			'nvd3': 'nvd3',
-			'React': 'react'
-		},
-		optimization: {
-	    splitChunks: {
-	      cacheGroups: {
-	        commons: {
-	          test: /[\\/]node_modules[\\/]/,
-	          name: 'vendors',
-	          chunks: 'all'
-	          // priority: -10
-	        },
-	        default: {
-	          minChunks: 2,
-	          priority: -20,
-	          reuseExistingChunk: true
-	        }
-	      }
-	    }
-	  },
+		externals: [nodeExternals()],
+		// optimization: {
+	 //    splitChunks: {
+	 //      cacheGroups: {
+	 //        commons: {
+	 //          test: /[\\/]node_modules[\\/]/,
+	 //          name: 'vendors',
+	 //          chunks: 'all'
+	 //          // priority: -10
+	 //        },
+	 //        default: {
+	 //          minChunks: 2,
+	 //          priority: -20,
+	 //          reuseExistingChunk: true
+	 //        }
+	 //      }
+	 //    }
+	 //  },
 		module: {
 	    rules: [{
         test: /\.(js|jsx)$/,
