@@ -18,17 +18,17 @@ module.exports = (env, argv) => {
 
 	const common  = {
 		mode,
-		// context: path.resolve(__dirname, 'component'),
+		context: path.resolve(__dirname, 'component'),
 		entry: {
-			index: ['./index.js'],
+			dashboardComponents: ['./index.js'],
 		},
 		output: {
 			libraryTarget: 'umd',
 			library: 'dashboard-react-components',
 			// filename: '[name].js',
 			// chunkFilename: '[name].chunk.js',
-			path: path.resolve(__dirname, 'dist'),
-			publicPath: 'dist/'
+			path: path.resolve(__dirname, 'component')
+			// publicPath: 'dist/'
 		},
 		externals: {
 			'd3': 'd3',
