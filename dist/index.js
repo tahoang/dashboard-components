@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("d3"), require("nvd3"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
+		define(["d3", "nvd3", "react"], factory);
 	else if(typeof exports === 'object')
-		exports["dashboard-react-components"] = factory();
+		exports["dashboard-react-components"] = factory(require("d3"), require("nvd3"), require("react"));
 	else
-		root["dashboard-react-components"] = factory();
-})(window, function() {
+		root["dashboard-react-components"] = factory(root["d3"], root["nvd3"], root["react"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE_d3__, __WEBPACK_EXTERNAL_MODULE_nvd3__, __WEBPACK_EXTERNAL_MODULE_react__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -187,7 +187,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"d3\");\n\n//# sourceURL=webpack://dashboard-react-components/external_%22d3%22?");
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_d3__;\n\n//# sourceURL=webpack://dashboard-react-components/external_%22d3%22?");
 
 /***/ }),
 
@@ -198,7 +198,7 @@ eval("module.exports = require(\"d3\");\n\n//# sourceURL=webpack://dashboard-rea
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"nvd3\");\n\n//# sourceURL=webpack://dashboard-react-components/external_%22nvd3%22?");
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_nvd3__;\n\n//# sourceURL=webpack://dashboard-react-components/external_%22nvd3%22?");
 
 /***/ }),
 
@@ -209,7 +209,7 @@ eval("module.exports = require(\"nvd3\");\n\n//# sourceURL=webpack://dashboard-r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"react\");\n\n//# sourceURL=webpack://dashboard-react-components/external_%22react%22?");
+eval("module.exports = __WEBPACK_EXTERNAL_MODULE_react__;\n\n//# sourceURL=webpack://dashboard-react-components/external_%22react%22?");
 
 /***/ })
 

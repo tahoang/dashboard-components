@@ -34,12 +34,12 @@ module.exports = (env, argv) => {
       // publicPath: 'dist/'
     },
     target: 'web',
-    externals: [nodeExternals()],
-    // externals: {
-    // 	react: 'react',
-    // 	d3: 'd3',
-    // 	nvd3: 'nvd3'
-    // },
+    // externals: [nodeExternals()],
+    externals: {
+    	react: 'react',
+    	d3: 'd3',
+    	nvd3: 'nvd3'
+    },
     // optimization: {
     //    splitChunks: {
     //      cacheGroups: {
