@@ -1,6 +1,6 @@
 {
   "name": "dashboard-react-components",
-  "version": "1.1.19",
+  "version": "1.1.20",
   "description": "Components for geo dashboard",
   "main": "component/dashboardComponents.js",
   "scripts": {
