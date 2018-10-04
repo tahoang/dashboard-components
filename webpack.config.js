@@ -23,7 +23,7 @@ module.exports = (env, argv) => {
       index: path.resolve(__dirname, 'src/index.js')
     },
     output: {
-      libraryTarget: 'umd',
+      libraryTarget: 'commonjs2',
       library: '',
       filename: '[name].js',
       // chunkFilename: '[name].chunk.js',
