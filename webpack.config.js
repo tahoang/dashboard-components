@@ -23,18 +23,19 @@ module.exports = (env, argv) => {
       index: path.resolve(__dirname, 'src/index.js')
     },
     output: {
-      libraryTarget: 'commonjs',
+      libraryTarget: 'umd',
       library: '',
       filename: '[name].js',
       // chunkFilename: '[name].chunk.js',
       path: path.resolve(__dirname, './dist')
       // publicPath: 'dist/'
     },
-    externals: {
-    	react: 'react',
-    	d3: 'd3',
-    	nvd3: 'nvd3'
-    },
+    externals: [nodeExternals()],
+    // externals: {
+    // 	react: 'react',
+    // 	d3: 'd3',
+    // 	nvd3: 'nvd3'
+    // },
     // optimization: {
     //    splitChunks: {
     //      cacheGroups: {
