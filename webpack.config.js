@@ -23,13 +23,17 @@ module.exports = (env, argv) => {
       index: path.resolve(__dirname, 'src/index.js')
     },
     output: {
-      libraryTarget: 'commonjs2',
-      library: '',
+      libraryTarget: 'umd',
+      library: {
+      	commonjs: 'dashboard-react-components',
+      	root: 'dashboard-react-components'
+      },
       filename: '[name].js',
       // chunkFilename: '[name].chunk.js',
       path: path.resolve(__dirname, './dist')
       // publicPath: 'dist/'
     },
+    target: 'web',
     externals: [nodeExternals()],
     // externals: {
     // 	react: 'react',

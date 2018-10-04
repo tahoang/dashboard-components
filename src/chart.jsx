@@ -11,6 +11,7 @@ require: d3 and nvd3
 
 import React from 'react';
 import * as d3 from 'd3';
+import nv from 'nvd3';
 
 export default class Chart extends React.Component {
 	constructor(props) {
