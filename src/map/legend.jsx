@@ -4,6 +4,7 @@ June 2017
 
 Map Layer legend
 */
+import React from 'react';//for testing
 
 export default class Legend extends React.Component {
 

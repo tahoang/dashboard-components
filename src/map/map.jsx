@@ -5,6 +5,7 @@ map component
 render div tag for leaflet map
 */
 
+import React from 'react';//for testing
 
 export default class Map extends React.Component {
 	constructor (props){

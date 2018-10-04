@@ -7,6 +7,7 @@ Props
 -map data
 
 */
+import React from 'react';//for testing
 
 import LayerItem from './layerItem.jsx';
 

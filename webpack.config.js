@@ -30,7 +30,11 @@ module.exports = (env, argv) => {
       path: path.resolve(__dirname, './dist')
       // publicPath: 'dist/'
     },
-    externals: [nodeExternals()],
+    externals: {
+    	react: 'react',
+    	d3: 'd3',
+    	nvd3: 'nvd3'
+    },
     // optimization: {
     //    splitChunks: {
     //      cacheGroups: {

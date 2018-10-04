@@ -6,6 +6,7 @@ Props
 click handler
 
 */
+import React from 'react';//for testing
 
 export default class LayerItem extends React.Component{
 	constructor (props) {
