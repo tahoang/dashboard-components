@@ -1,4 +1,3 @@
-
 //webpack 4 config
 
 const path = require('path');
@@ -14,83 +13,87 @@ const nodeExternals = require('webpack-node-externals');
 // const prod = require('./config/webpack.prod.js');
 
 module.exports = (env, argv) => {
-	let mode = env.production ? 'production' : 'development';
-	console.log(mode);
+  let mode = env.production ? 'production' : 'development';
+  console.log(mode);
 
-	const common  = {
-		mode,
-		// context: path.resolve(__dirname, 'component'),
-		entry: {
-			index: path.resolve(__dirname, 'src/index.js')
-		},
-		output: {
-			libraryTarget: 'commonjs',
-			library: '',
-			filename: '[name].js',
-			// chunkFilename: '[name].chunk.js',
-			path: path.resolve(__dirname, './dist')
-			// publicPath: 'dist/'
-		},
-		externals: [nodeExternals()],
-		// optimization: {
-	 //    splitChunks: {
-	 //      cacheGroups: {
-	 //        commons: {
-	 //          test: /[\\/]node_modules[\\/]/,
-	 //          name: 'vendors',
-	 //          chunks: 'all'
-	 //          // priority: -10
-	 //        },
-	 //        default: {
-	 //          minChunks: 2,
-	 //          priority: -20,
-	 //          reuseExistingChunk: true
-	 //        }
-	 //      }
-	 //    }
-	 //  },
-		module: {
-	    rules: [{
+  const common = {
+    mode,
+    // context: path.resolve(__dirname, 'component'),
+    entry: {
+      index: path.resolve(__dirname, 'src/index.js')
+    },
+    output: {
+      libraryTarget: 'commonjs',
+      library: '',
+      filename: '[name].js',
+      // chunkFilename: '[name].chunk.js',
+      path: path.resolve(__dirname, './dist')
+      // publicPath: 'dist/'
+    },
+    externals: [nodeExternals()],
+    // optimization: {
+    //    splitChunks: {
+    //      cacheGroups: {
+    //        commons: {
+    //          test: /[\\/]node_modules[\\/]/,
+    //          name: 'vendors',
+    //          chunks: 'all'
+    //          // priority: -10
+    //        },
+    //        default: {
+    //          minChunks: 2,
+    //          priority: -20,
+    //          reuseExistingChunk: true
+    //        }
+    //      }
+    //    }
+    //  },
+    module: {
+      rules: [{
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/react']
+          }
         }
-      },{
-	    	test: /\.(png|svg|jpg|gif)$/,
-	    	use: ['file-loader']
-	    },{
+
+      }, {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader']
+      }, {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
-        	'file-loader'
+          'file-loader'
         ]
-     	},{ 
-	     	test: /\.hbs$/, 
-	     	loader: 'handlebars-loader',
-	     	options: {
+      }, {
+        test: /\.hbs$/,
+        loader: 'handlebars-loader',
+        options: {
           // helperDirs: path.join(__dirname, 'src/client/helpers'),
           precompileOptions: {
             knownHelpersOnly: false,
-      	  }
-	      }
-     	}]
-	  },
-		plugins: [
-			// new CleanWebpackPlugin(['public/dist']),
-			//global constants for developement/production mode
-			// new webpack.DefinePlugin({
-			// 	'process.env': {
-		 //      NODE_ENV: JSON.stringify(env.production ? 'production' : 'development')
-		 //    }
-			// })
-	    
-		]
-	};
+          }
+        }
+      }]
+    },
+    plugins: [
+      // new CleanWebpackPlugin(['public/dist']),
+      //global constants for developement/production mode
+      // new webpack.DefinePlugin({
+      // 	'process.env': {
+      //      NODE_ENV: JSON.stringify(env.production ? 'production' : 'development')
+      //    }
+      // })
 
-	return common;
-	// if(env.production)	
-	// 	return merge(common, prod);
-	// else
-	// 	return merge(common, dev);
+    ]
+  };
+
+  return common;
+  // if(env.production)	
+  // 	return merge(common, prod);
+  // else
+  // 	return merge(common, dev);
 
 };

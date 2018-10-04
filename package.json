@@ -22,28 +22,32 @@
     "url": "https://github.com/tahoang/dashboard-components/issues"
   },
   "homepage": "https://github.com/tahoang/dashboard-components#readme",
-  "peerDependencies": {
-    "d3": "^4.13.0",
-    "nvd3": "^1.8.6",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.1"
-  },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
     "react": "^16.5.2",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-node-externals": "^1.7.2"
   },
-  "babel": {
+  "@babel": {
     "presets": [
       "react",
-      "env"
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7"
+            ]
+          }
+        }
+      ]
     ]
   },
   "dependencies": {
